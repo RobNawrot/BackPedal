@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project By Robert Nawrot</title>
+    <title>BACKPEDAL: A Coding Project By Robert Nawrot</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,7 +24,7 @@
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="#"><img src="img/Profile Picture-03.svg" class="d-inline-block align-text-top" 
-            alt="Robert Nawrot Logo" width="30" height="28"> APP NAME</a>
+            alt="Robert Nawrot Logo" width="30" height="28"> BACKPEDAL</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -41,7 +41,7 @@
                     <a class="nav-link active" aria-current="page" href="code.html">The Code</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" target="_blank" href="#">Git Repo</a> 
+                    <a class="nav-link" target="_blank" href="https://github.com/RobNawrot/BackPedal">Git Repo</a> 
                     <!-- Github link to the project repo. -->
                 </li>
                 <li class="nav-item">
@@ -56,14 +56,52 @@
     <!-- ==== Main Section ==== -->
     <main class="flex-shrink-0">
         <div class="container py-5 px-5 mt-5">
-            <h2 class="border-1 border-bottom border-dark">The Code for APP NAME</h2>
+            <h2 class="border-1 border-bottom border-dark">The Code for BACKPEDAL</h2>
             <div class="row row-cols-1 row-cols-lg-2">
                 <div class="col-lg-8">
                     <pre class="line-numbers"><code class="language-javascript">
-                        // Call Hello World
-                        function HelloWorld() {
-                            alert("hello world!");
-                        }
+                        // Get the string from the page. Reverse it, then display it. (Controller Function)
+function getValue() {
+
+    /* Hide the alert box. */
+    document.getElementById("alert").classList.add("invisible");
+
+    /* Retrieving the string. */
+    let userString = document.getElementById("userString").value;
+
+    /* Reversing the string. */
+    let revString =  reverseString(userString);
+
+    /* Displaying the reversed string. */
+    displayString(revString);
+
+}
+
+// Reverse the string. (Logic Function)
+function reverseString(userString) {
+
+    let revString = [];
+
+    /* Reverse a given string using a for-loop. */
+    for (let i = userString.length - 1; i >= 0; i--) {
+        // revString.push() = userString[i];
+        revString += userString[i];
+    }
+
+    return revString;
+
+}
+
+// Display the reversed string to the user. (View Function)
+function displayString(revString) {
+
+    /* Write a message to the page. */
+    document.getElementById("msg").innerHTML = `Your reversed string is: ${revString}`;
+
+    /* Show the alert box. */
+    document.getElementById("alert").classList.remove("invisible");
+
+}
                     </code>
                     </pre>
                 </div>
